@@ -12,7 +12,7 @@ import Celulares from "./components/Celulares/Celulares.jsx";
 import CarrinhoPage from "./components/Carrinho/CarrinhoPage.jsx";
 import Servico from "./components/Servicos/Servico.jsx";
 import ProdutoPage from "./components/ProdutoPage/ProdutoPage.jsx";
-
+import Whatsapp from "./components/buttonwhats/ButtonWhats.jsx"
 // Biblioteca
 import { Routes, Route } from "react-router-dom";
 import FadeInSection from "./components/Animacao/FadeInSection.jsx";
@@ -76,6 +76,7 @@ function App() {
         <Route path="/produtopage" element={<ProdutoPage />} />
       </Routes>
       <Footer />
+      <Whatsapp/>
     </>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import { useCarrinho } from "../Carrinho/CarrinhoContext";
 import styles from "./Navbar.module.css";
-import Logo from "/src/assets/Logo.png";
+import Logo from "/src/assets/logoIntro.png";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import CartIcon from "../Carrinho/CartIcon";

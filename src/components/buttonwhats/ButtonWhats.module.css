@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+}
+.buttonwhats{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    border-radius: 50%;
+    background-color: #00ff88;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0,0,0.3);
+    transition: transform 0.2 ease, box-shadow 0.2s ease;
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0,0,0.4);
+        
+    }
+}
+
+.buttonwhats img{
+    width: 35px;
+    height: 35px;
+ mix-blend-mode: multiply;}
+
