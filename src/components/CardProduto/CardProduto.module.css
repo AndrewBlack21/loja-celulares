@@ -1,0 +1,15 @@
+.cardproduto {
+  background: #0e3b2d;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  text-align: center;
+  max-width: 14rem;
+}
+.cardproduto:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--btn-green);
+}
+.cardproduto img {
+  max-width: 100%;
+  border-radius: 0.7rem;
+}

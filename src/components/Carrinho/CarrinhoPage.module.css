@@ -1,0 +1,143 @@
+.carrinhoContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.container {
+  margin-top: 6rem;
+  color: #000;
+}
+.titulo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #00ff88; /* linha esquerda */
+  border-right: 4px solid #00ff88; /* linha direita */
+  border-radius: 4px; /* opcional */
+  background: var(--text-ligth); /* remove o fundo */
+}
+/* Coluna de produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+/* Card de cada produto */
+.cardProduto {
+  background: #093b2f;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 220px;
+  height: 320px;
+  box-sizing: border-box;
+}
+
+.info {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.cardProduto img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain; /* mantém proporção sem esticar */
+  margin-bottom: 10px;
+}
+
+.cardProdutoInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardProdutoInfo h4 {
+  font-size: 16px;
+  margin: 0;
+}
+.nome {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 5px 0;
+  flex-grow: 1; /* empurra preço e botão para baixo */
+}
+.cardProdutoInfo p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+/* Coluna de pagamento */
+.pagamento {
+  flex: 1;
+  background: #e6f4f1;
+  border-radius: 10px;
+  padding: 20px;
+}
+.pagamento h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formaEscolhida {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.finalizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preco {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.remover {
+  background: #00ff44;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remover:hover {
+  background: #00cc36;
+}
+
+.botoesPagamento {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  margin: 1rem;
+}

@@ -1,0 +1,191 @@
+.footer {
+  background: var(--bg-green);
+  padding: 40px 20px;
+  border-top: 2px solid #eee;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+.container > div {
+  flex: 1;
+  min-width: 200px;
+}
+.contact {
+  font-size: 18px;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+
+  color: #fff;
+}
+
+.contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.contact i {
+  font-size: 30px;
+  color: #fff;
+}
+.contact h3 {
+  margin-bottom: 15px;
+  margin-top: 8px;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tituloInstituto,
+.tituloContato,
+.tituloLocalizacao,
+.tituloCompromisso {
+  font-size: 2rem; /* Aumentando o tamanho da fonte */
+  font-weight: bold;
+  color: #fff; /* Cor chamativa - ajustável */
+  text-transform: uppercase; /* Deixa os títulos em maiúsculas */
+  margin-bottom: 10px;
+  letter-spacing: 1px; /* Espaçamento entre as letras */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra sutil no texto */
+  font-family: "Roboto", sans-serif; /* Fonte moderna e limpa */
+}
+.tituloSocial {
+  margin-bottom: 0.625rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00ff88;
+  text-transform: uppercase;
+}
+
+.logo {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.img {
+  max-width: 10rem;
+
+  border-radius: 5em;
+}
+
+.slogan {
+  font-style: italic;
+  line-height: 1;
+  width: 17rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+}
+
+.location,
+.legal,
+.social {
+  flex: 1 1 50px;
+  text-decoration: none;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #fff;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 20px;
+}
+
+.socialicon {
+  display: flex; /* Coloca os ícones na vertical */
+  flex-direction: row; /* Organiza os ícones em coluna */
+  align-items: center; /* Alinha os ícones ao centro */
+  gap: 15px; /* Espaçamento entre os ícones */
+  margin: 0 0 10em;
+}
+.socialicon a:hover {
+  color: #00ff88;
+  transform: scale(1.2);
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 1px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: initial;
+    align-items: center;
+  }
+}
+
+.instituional {
+  color: #fff;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.instituional a {
+  text-decoration: none;
+  color: #fff;
+  &:hover {
+    color: #00ff88;
+  }
+}
+
+.instituional ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.instituional ul li {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.instituional ul li:hover {
+  text-decoration: underline;
+}
+.payments img {
+  width: 50px;
+  margin: 5px;
+}
+.payments img .badges img {
+  width: 50px;
+  margin: 5px;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

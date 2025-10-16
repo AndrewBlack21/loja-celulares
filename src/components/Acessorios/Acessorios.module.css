@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-wrap: wrap; /* deixa os itens quebrarem linha no mobile */
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 24px; /* controla o espaçamento entre os cards */
+  max-width: 1200px; /* largura máxima */
+  margin: 0 auto; /* centraliza o container */
+  padding: 20px;
+}
+.mySwiper {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.swiper {
+  height: auto !important;
+}
+
+.cardproduto {
+  background-color: #0e3b2d;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  width: 250px;
+  /* Adicione flexbox para centralizar o conteúdo */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribui o espaço entre os elementos */
+  align-items: center; /* Centraliza horizontalmente */
+  height: 350px; /* Adiciona uma altura fixa para padronizar os cards */
+}
+.cardproduto:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--btn-green);
+}
+.cardproduto img {
+  width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+  max-width: 150px; /* Limita o tamanho máximo da imagem */
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinha o conteúdo ao final do contêiner */
+  align-items: center;
+  gap: 8px;
+  height: 100%; /* Garante que o contêiner de info ocupe toda a altura disponível */
+}
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #00ff88; /* linha esquerda */
+  border-right: 4px solid #00ff88; /* linha direita */
+  border-radius: 4px; /* opcional */
+  background: transparent; /* remove o fundo */
+}
+
+.acessorios-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px; /* Aplique o mesmo valor de gap aqui */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
