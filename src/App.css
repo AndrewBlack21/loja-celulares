@@ -78,3 +78,6 @@ button:hover {
   padding: 20px;
   text-align: center; /* Centraliza o título */
 }
+@media (max-width: 768px) {
+
+}

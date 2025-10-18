@@ -18,7 +18,7 @@
 
 .cardproduto {
   background-color: #0e3b2d;
-  border-radius: 12px;
+  border-radius: 1rem;
   padding: 16px;
   text-align: center;
   width: 250px;
@@ -70,4 +70,15 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+@media (max-width: 768px) {
+  .mySwiper {
+    width: 90%; 
+  }
+
+ 
+  .container {
+    gap: 15px;
+    justify-content: center; 
+  }
 }

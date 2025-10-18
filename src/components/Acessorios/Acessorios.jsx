@@ -33,6 +33,7 @@ export default function Acessorios({ limit = 4 }) {
   if (loading) return <p>Carregando produtos...</p>;
 
   return (
+    <div className={styles.container}>
     <Swiper
       slidesPerView={1}
       loop={true}
@@ -56,7 +57,7 @@ export default function Acessorios({ limit = 4 }) {
       className={styles.mySwiper}
     >
       {/* Use a classe `container` aqui */}
-      <div className={styles.container}>
+      
         {produtos
           .filter((produto) => produto.category === "Acessorios")
           .slice(0, limit)
@@ -80,7 +81,8 @@ export default function Acessorios({ limit = 4 }) {
               </div>
             </SwiperSlide>
           ))}
-      </div>
+      
     </Swiper>
+    </div>
   );
 }

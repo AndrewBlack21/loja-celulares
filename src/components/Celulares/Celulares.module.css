@@ -80,3 +80,15 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .mySwiper {
+    width: 90%; 
+  }
+
+ 
+  .container {
+    gap: 15px;
+    justify-content: center; 
+  }
+}

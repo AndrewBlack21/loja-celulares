@@ -35,6 +35,7 @@ export default function Celulares({ limit = 10 }) {
   if (loading) return <p>Carregando produtos...</p>;
 
   return (
+    <div className={styles.container}>  
     <Swiper
       slidesPerView={1}
       loop={true}
@@ -57,7 +58,7 @@ export default function Celulares({ limit = 10 }) {
       modules={[Pagination, Autoplay]}
       className={styles.mySwiper}
     >
-      <div className={styles.container}>
+      
         {produtos
           .filter((produto) => produto.category === "Celulares")
           .slice(0, limit)
@@ -85,7 +86,8 @@ export default function Celulares({ limit = 10 }) {
               </div>
             </SwiperSlide>
           ))}
-      </div>
+    
     </Swiper>
+    </div>
   );
 }
