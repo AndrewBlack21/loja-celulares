@@ -78,7 +78,19 @@ export default function ListaProdutos({ limit = 6 }) {
                 <p className={styles.price}>R$ {produto.price.toFixed(2)}</p>
 
                 <button
-                  onClick={() => adicionarCarrinho(produto)}
+                  onClick={() => {
+                    // 1. Crie um objeto com os detalhes específicos da variante escolhida
+                    const produtoParaCarrinho = {
+                      ...produto, // Pega id, name, price, etc. do produto original
+                      color: corAtiva
+                        ? corAtiva.name
+                        : produto.colors[0]?.name || "Padrão", // Adiciona o NOME da cor selecionada
+                      image_url: imagemAtual, // Adiciona a IMAGEM específica da cor selecionada
+                    };
+
+                    // 2. Envie este objeto completo para a função do carrinho
+                    adicionarCarrinho(produtoParaCarrinho);
+                  }}
                   className={styles.buyButton}
                 >
                   Comprar Agora

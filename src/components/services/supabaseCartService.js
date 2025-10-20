@@ -42,18 +42,30 @@ export async function addToCart({ user_id, product_id, color, quantity = 1 }) {
 }
 
 // Busca todos os itens do carrinho de um usuário
-export async function getCartItems(user_id) {
+  export const getCartItems = async (userId) => {
+  // A consulta ao Supabase é a parte mais importante
   const { data, error } = await supabase
-    .from(TABLE)
-    .select(
-      `id, product_id, color, quantity,
-       produtos (nome, preco, imagem_url)` // supondo uma FK para a tabela produtos
-    )
-    .eq("user_id", user_id);
+    .from("carrinho") // Nome da sua tabela de carrinho
+    .select(`
+      id,
+      quantity,
+      color,
+      produtos:product_id (
+        id,
+        nome,
+        preco,
+        imagem_url
+      )
+    `)
+    .eq("user_id", userId);
 
-  if (error) throw error;
+  if (error) {
+    console.error("Erro ao buscar itens do carrinho:", error);
+    throw error;
+  }
+  
   return data;
-}
+};
 
 // Remove um item
 export async function removeCartItem(id) {

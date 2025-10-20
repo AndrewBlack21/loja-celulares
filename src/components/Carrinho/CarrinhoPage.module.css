@@ -1,12 +1,15 @@
 .carrinhoContainer {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
+  justify-content: center; /* Altera para 'center' ou 'flex-start' */
+  gap: 30px; /* Aumenta um pouco o espaço entre as colunas */
+  padding: 20px 0;
+  flex-wrap: wrap; /* Permite que a coluna de pagamento vá para baixo em telas pequenas */
 }
 
 .container {
-  margin-top: 6rem;
+  max-width: 1200px;  /* Limita a largura máxima */
+  margin: 6rem auto 0 auto; /* Centraliza o container na página */
+  padding: 0 20px; /* Adiciona um respiro nas laterais */
   color: #000;
 }
 .titulo {

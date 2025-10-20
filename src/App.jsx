@@ -17,6 +17,10 @@ import Whatsapp from "./components/buttonwhats/ButtonWhats.jsx"
 import { Routes, Route } from "react-router-dom";
 import FadeInSection from "./components/Animacao/FadeInSection.jsx";
 
+// Rota de login e registro
+import Login from "./components/Pages/Login.jsx";
+import Register from "./components/Pages/Register.jsx";
+
 function App() {
   return (
     <>
@@ -74,6 +78,8 @@ function App() {
         <Route path="/celulares" element={<Celulares />} />
         <Route path="/carrinho" element={<CarrinhoPage />} />
         <Route path="/produtopage" element={<ProdutoPage />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
       <Whatsapp/>

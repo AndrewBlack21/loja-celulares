@@ -8,7 +8,7 @@ export default function CartIcon() {
   const [animate, setAnimate] = useState(false);
 
   // calcula quantidade de itens
-  const count = carrinho.reduce((total, item) => total + item.quantidade, 0);
+  const count = carrinho.reduce((total, item) => total + item.quantity, 0);
 
   useEffect(() => {
     if (count > 0) {

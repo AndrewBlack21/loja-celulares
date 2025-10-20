@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, use } from "react";
 import { supabase } from "../../supabaseCliente.js";
 import {
   addToCart,
@@ -6,6 +6,8 @@ import {
   removeCartItem,
   clearCart,
 } from "../services/supabaseCartService";
+import { useNavigate, useLocation } from "react-router-dom";
+
 
 
 const CarrinhoContext = createContext();
@@ -13,7 +15,8 @@ const CarrinhoContext = createContext();
 export function CarrinhoProvider({ children }) {
   const [carrinho, setCarrinho] = useState([]);
   const [user, setUser] = useState(null);
-
+  const navigate = useNavigate();
+  const location = useLocation();
   // Recupera o usuário logado
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
@@ -36,7 +39,7 @@ export function CarrinhoProvider({ children }) {
 
   const adicionarCarrinho = async (produto) => {
     if (!user) {
-      alert("Você precisa estar logado para adicionar ao carrinho!");
+      navigate ("/Login", { state: { from: location.pathname } });
       return;
     }
 
