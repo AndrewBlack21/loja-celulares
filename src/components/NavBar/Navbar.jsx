@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { useCarrinho } from "../Carrinho/CarrinhoContext";
 import styles from "./Navbar.module.css";
 import Logo from "/src/assets/logoIntro.png";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import CartIcon from "../Carrinho/CartIcon";
 import AuthStatus from "../Context/AuthStatus";
-
-// import { span } from "framer-motion/client";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const img = Logo;
 
 export default function Navbar() {
-  // const { carrinho } = useCarrinho();
-  // const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -23,15 +22,48 @@ export default function Navbar() {
           <img src={img} alt="Logo" />
         </Link>
       </div>
-      <ul>
-        <Link to="/produtopage">Produto</Link>
-        <AuthStatus />
 
-        <Link to="/carrinho" className={styles.carrinho}>
-          <CartIcon />
-          {/* {totalItens > 0 && <span>({totalItens})</span>} */}
-        </Link>
+      {/* Menu para telas grandes com <li> */}
+      <ul className={styles.menuDesktop}>
+        <li>
+          <Link to="/produtopage">Produto</Link>
+        </li>
+        <li>
+          <AuthStatus />
+        </li>
+        <li>
+          <Link to="/carrinho" className={styles.carrinho}>
+            <CartIcon />
+          </Link>
+        </li>
       </ul>
+
+      {/* Botão do menu hambúrguer */}
+      <button className={styles.hamburger} onClick={toggleMenu}>
+        {isMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      {/* Menu dropdown com <li> */}
+      {isMenuOpen && (
+        <ul className={styles.menuMobile}>
+          <li>
+            <Link to="/produtopage" onClick={toggleMenu}>
+              Produto
+            </Link>
+          </li>
+          {/* Você pode manter a div se quiser agrupar, mas os itens dentro dela ainda são links/componentes */}
+          <li className={styles.mobileAuthCart}>
+            <AuthStatus />
+            <Link
+              to="/carrinho"
+              className={styles.carrinho}
+              onClick={toggleMenu}
+            >
+              <CartIcon />
+            </Link>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 }
