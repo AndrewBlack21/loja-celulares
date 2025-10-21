@@ -7,7 +7,8 @@ export default function CarrinhoPage() {
 
   // Calcula o valor total do carrinho
   const total = carrinho.reduce((acc, item) => {
-    const price = Number(item.produtos?.preco) || 0;
+    // ✅ Acessando o preço aqui também
+    const price = Number(item.products?.price) || 0;
     const quantity = Number(item.quantity) || 0;
     return acc + price * quantity;
   }, 0);
@@ -35,17 +36,20 @@ export default function CarrinhoPage() {
           {carrinho.map((item) => (
             <div key={item.id} className={styles.cardProduto}>
               <img
+                // ✅ Acessando a imagem de dentro do objeto aninhado
                 src={
-                  item.produtos?.imagem_url || "https://via.placeholder.com/150"
+                  item.products?.image_url || "https://via.placeholder.com/150"
                 }
-                alt={item.produtos?.nome}
+                alt={item.products?.name}
               />
               <div className={styles.cardProdutoInfo}>
-                <h4 className={styles.nome}>{item.produtos?.nome}</h4>
+                {/* ✅ Acessando o nome */}
+                <h4 className={styles.nome}>{item.products?.name}</h4>
                 <p>Cor: {item.color}</p>
                 <p>Qtd: {item.quantity}</p>
                 <p className={styles.preco}>
-                  R$ {Number(item.produtos?.preco).toFixed(2)}
+                  {/* ✅ Acessando o preço */}
+                  R$ {Number(item.products?.price).toFixed(2)}
                 </p>
               </div>
               <button

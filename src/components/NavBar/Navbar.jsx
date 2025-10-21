@@ -6,6 +6,7 @@ import Logo from "/src/assets/logoIntro.png";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import CartIcon from "../Carrinho/CartIcon";
+import AuthStatus from "../Context/AuthStatus";
 
 // import { span } from "framer-motion/client";
 
@@ -24,7 +25,8 @@ export default function Navbar() {
       </div>
       <ul>
         <Link to="/produtopage">Produto</Link>
-        {/* <Link to="/contato">Contato</Link> */}
+        <AuthStatus />
+
         <Link to="/carrinho" className={styles.carrinho}>
           <CartIcon />
           {/* {totalItens > 0 && <span>({totalItens})</span>} */}
