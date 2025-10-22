@@ -18,6 +18,11 @@ jobs:
     # Usa a versão mais recente do Ubuntu (Linux) como ambiente
     runs-on: ubuntu-latest
 
+    # Adicione esta seção para definir o ambiente de deploy
+    environment: # <-- ADICIONE ESTE BLOCO
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       # 1. Baixa o seu código do repositório
       - name: Checkout
