@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { CarrinhoProvider } from "./components/Carrinho/CarrinhoContext";
 import { AuthProvider } from "./components/Context/AuthContext";
 import "./index.css";
@@ -10,12 +10,12 @@ import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router>
       <AuthProvider>
         <CarrinhoProvider>
           <App />
         </CarrinhoProvider>
       </AuthProvider>
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>
 );
