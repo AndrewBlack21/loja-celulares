@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 60vh;
+}
+
+.formWrapper {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #00ff88; /* linha esquerda */
+  border-right: 4px solid #00ff88; /* linha direita */
+  border-radius: 4px; /* opcional */
+  background: var(--text-ligth); /* remove o fundo */
+}
+
+.logo {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+}
+
+.button {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #27ae60;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #229954;
+}
+
+.button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.switchLink {
+  margin-top: 25px;
+  color: #555;
+}
+
+.switchLink a {
+  color: #27ae60;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.switchLink a:hover {
+  text-decoration: underline;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: left;
+  cursor: pointer;
+}
+
+.checkboxLabel input {
+  width: auto;
+}

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { supabase } from "../../supabaseCliente";
 import { useNavigate } from "react-router-dom";
-import styles from "./Register.module.css";
+import styles from "./Auth.module.css"; // Importe o CSS unificado
+import logo from "/src/assets/logoIntro.png";
 
 export default function Register() {
   const [loading, setLoading] = useState(false);
@@ -23,103 +24,104 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  setError("");
+    setError("");
 
-  if (form.senha !== form.confirmarSenha) {
-    setError("As senhas não coincidem.");
-    return;
-  }
+    if (form.senha !== form.confirmarSenha) {
+      setError("As senhas não coincidem.");
+      return;
+    }
 
-  try {
-    setLoading(true);
+    try {
+      setLoading(true);
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email: form.email,
+        password: form.senha,
+        options: {
+          data: {
+            nome: form.nome,
+            telefone: form.telefone,
+            marketing_opt_in: form.marketing,
+          },
+        },
+      });
 
-    // 1️⃣ Cria o usuário de autenticação e passa os dados extras em 'options'
-    const { data, error: signUpError } = await supabase.auth.signUp({
-      email: form.email,
-      password: form.senha,
-      options: {
-        data: {
-          nome: form.nome, // O gatilho vai usar isso
-          telefone: form.telefone,
-          marketing_opt_in: form.marketing
-        }
-      }
-    });
+      if (signUpError) throw signUpError;
 
-    if (signUpError) throw signUpError;
-    
-    // 2️⃣ A inserção na tabela "usuarios" foi REMOVIDA DAQUI
-    // O gatilho no banco de dados faz isso automaticamente agora.
-
-    alert("✅ Conta criada com sucesso! Verifique seu e-mail para confirmação.");
-    navigate("/login");
-  } catch (err) {
-    console.error(err);
-    setError(err.message || "Erro ao criar conta");
-  } finally {
-    setLoading(false);
-  }
+      alert(
+        "✅ Conta criada com sucesso! Verifique seu e-mail para confirmação."
+      );
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+      setError(err.message || "Erro ao criar conta");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Crie sua Conta</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="nome"
-          placeholder="Nome completo"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="senha"
-          placeholder="Senha"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="confirmarSenha"
-          placeholder="Confirmar senha"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="telefone"
-          placeholder="Telefone"
-          required
-          onChange={handleChange}
-        />
-
-        <label>
+      <div className={styles.formWrapper}>
+        <img src={logo} alt="" className={styles.logo} />
+        <h2 className={styles.title}>Crie sua Conta</h2>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <input
-            type="checkbox"
-            name="marketing"
+            className={styles.input}
+            type="text"
+            name="nome"
+            placeholder="Nome completo"
+            required
             onChange={handleChange}
           />
-          Sim, aceito receber novidades, promoções e ofertas exclusivas por Email e WhatsApp
-        </label>
+          <input
+            className={styles.input}
+            type="email"
+            name="email"
+            placeholder="Seu melhor e-mail"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className={styles.input}
+            type="password"
+            name="senha"
+            placeholder="Crie uma senha"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className={styles.input}
+            type="password"
+            name="confirmarSenha"
+            placeholder="Confirme sua senha"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className={styles.input}
+            type="text"
+            name="telefone"
+            placeholder="Telefone (com DDD)"
+            required
+            onChange={handleChange}
+          />
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
+          <label className={styles.checkboxLabel}>
+            <input type="checkbox" name="marketing" onChange={handleChange} />
+            Sim, aceito receber novidades e promoções.
+          </label>
 
-        <button type="submit" disabled={loading}>
-          {loading ? "Criando conta..." : "Cadastrar"}
-        </button>
-      </form>
+          {error && <p className={styles.error}>{error}</p>}
 
-      <p>
-        Já tem conta? <a href="/login">Faça Login</a>
-      </p>
+          <button type="submit" className={styles.button} disabled={loading}>
+            {loading ? "Criando conta..." : "Cadastrar"}
+          </button>
+        </form>
+
+        <p className={styles.switchLink}>
+          Já tem conta? <a href="/login">Faça Login</a>
+        </p>
+      </div>
     </div>
   );
 }

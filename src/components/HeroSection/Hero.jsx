@@ -23,6 +23,7 @@ export default function Hero() {
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         Navigation
+        autoHeight={true}
         Pagination={{ clickable: true }}
         autoplay={{ delay: 9000 }}
         loop={true}
