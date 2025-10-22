@@ -2,7 +2,7 @@
   "name": "loja-celulares",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/AndrewBlack21/loja-celulares",
+  "homepage": "https://andrewblack21.github.io/loja-celulares/",
   "type": "module",
   "scripts": {
     "dev": "vite",
