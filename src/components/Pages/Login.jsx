@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../../supabaseCliente";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import styles from "./Auth.module.css"; // Mude para o novo arquivo CSS
 
 export default function Login() {
@@ -61,7 +61,7 @@ export default function Login() {
         </form>
 
         <p className={styles.switchLink}>
-          Ainda não tem conta? <a href="/register">Cadastre-se aqui</a>
+          Ainda não tem conta? <Link to="/register">Cadastre-se aqui</Link>
         </p>
       </div>
     </div>
