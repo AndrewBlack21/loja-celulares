@@ -6,6 +6,8 @@
   background-color: #093b2f; /* Cor de fundo da sua navbar */
   color: white;
   position: relative; /* Importante para o menu mobile */
+  margin: 0.5rem;
+  border-radius: 1rem;
 }
 
 .navbar .logo {
@@ -16,7 +18,7 @@
 }
 
 .logo img {
-  height: 40px;
+  height: 55px;
   filter: invert(1);
 }
 .carrinho {

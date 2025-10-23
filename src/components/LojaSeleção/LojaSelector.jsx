@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./LojaSelector.module.css";
-
+import Logo from "/src/assets/logoIntro.png";
+const img = Logo;
 export default function LojaSelector() {
   const [endereco, setEndereco] = useState("Rua Exemplo, 123");
 
@@ -16,9 +17,9 @@ export default function LojaSelector() {
 
   return (
     <section className={styles.section2}>
-      <div className={styles.logo}>
-        <img src="/src/assets/Logo.png" alt="" />
-      </div>
+      {/*<div className={styles.logo}>
+        <img src={Logo} alt="Logo da Iphocell" />
+      </div>*/}
 
       <select
         className={styles.dropdown}
