@@ -17,7 +17,7 @@ export default function LojaSelector() {
   return (
     <section className={styles.section2}>
       <div className={styles.logo}>
-        <img src="./src/assets/Logo.png" alt="" />
+        <img src="/src/assets/Logo.png" alt="" />
       </div>
 
       <select
