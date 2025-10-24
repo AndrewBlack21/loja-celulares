@@ -103,7 +103,9 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    background-color: #093b2f;
+    background-color: rgba(9, 59, 47, 0.75); /* Cor com transparência */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px);
     position: absolute;
     top: 100%; /* Começa logo abaixo da navbar */
     left: 0;
