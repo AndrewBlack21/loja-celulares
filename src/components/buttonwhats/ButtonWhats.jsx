@@ -1,4 +1,7 @@
 import styles from "./ButtonWhats.module.css";
+import whatsapp from "/src/assets/icons8-whatsapp.gif";
+
+const img = whatsapp;
 
 export default function ButtonWhats() {
   return (
@@ -6,7 +9,7 @@ export default function ButtonWhats() {
       <div className={styles.container}>
         <div className={styles.buttonwhats}>
           <a href="">
-            <img src="/src/assets/icons8-whatsapp.gif" alt="" />
+            <img src={img} alt="" />
           </a>
         </div>
       </div>
