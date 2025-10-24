@@ -1,15 +1,15 @@
 .carrinhoContainer {
   display: flex;
-  justify-content: center; /* Altera para 'center' ou 'flex-start' */
-  gap: 30px; /* Aumenta um pouco o espaço entre as colunas */
+  justify-content: center;
+  gap: 30px;
   padding: 20px 0;
-  flex-wrap: wrap; /* Permite que a coluna de pagamento vá para baixo em telas pequenas */
+  flex-wrap: wrap;
 }
 
 .container {
-  max-width: 1200px;  /* Limita a largura máxima */
-  margin: 6rem auto 0 auto; /* Centraliza o container na página */
-  padding: 0 20px; /* Adiciona um respiro nas laterais */
+  max-width: 1200px;
+  margin: 6rem auto 0 auto;
+  padding: 0 20px;
   color: #000;
 }
 .titulo {
@@ -25,10 +25,10 @@
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0.5rem 1rem;
-  border-left: 4px solid #00ff88; /* linha esquerda */
-  border-right: 4px solid #00ff88; /* linha direita */
-  border-radius: 4px; /* opcional */
-  background: var(--text-ligth); /* remove o fundo */
+  border-left: 4px solid #00ff88;
+  border-right: 4px solid #00ff88;
+  border-radius: 4px;
+  background: var(--text-ligth);
 }
 /* Coluna de produtos */
 .produtos {
@@ -67,7 +67,7 @@
 .cardProduto img {
   width: 150px;
   height: 150px;
-  object-fit: contain; /* mantém proporção sem esticar */
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
@@ -85,7 +85,7 @@
   font-size: 14px;
   font-weight: 500;
   margin: 5px 0;
-  flex-grow: 1; /* empurra preço e botão para baixo */
+  flex-grow: 1;
 }
 .cardProdutoInfo p {
   margin: 5px 0;

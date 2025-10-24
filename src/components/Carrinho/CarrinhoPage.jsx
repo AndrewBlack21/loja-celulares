@@ -3,7 +3,7 @@ import styles from "./CarrinhoPage.module.css";
 import { useCarrinho } from "./CarrinhoContext";
 
 export default function CarrinhoPage() {
-  const { carrinho, removerProduto, limparCarrinho } = useCarrinho(); // Adicionei limparCarrinho
+  const { carrinho, removerProduto, limparCarrinho } = useCarrinho();
 
   // Calcula o valor total do carrinho
   const total = carrinho.reduce((acc, item) => {

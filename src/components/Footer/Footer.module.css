@@ -52,14 +52,14 @@
 .tituloContato,
 .tituloLocalizacao,
 .tituloCompromisso {
-  font-size: 2rem; /* Aumentando o tamanho da fonte */
+  font-size: 2rem;
   font-weight: bold;
-  color: #fff; /* Cor chamativa - ajustável */
-  text-transform: uppercase; /* Deixa os títulos em maiúsculas */
+  color: #fff;
+  text-transform: uppercase;
   margin-bottom: 10px;
-  letter-spacing: 1px; /* Espaçamento entre as letras */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra sutil no texto */
-  font-family: "Roboto", sans-serif; /* Fonte moderna e limpa */
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
 }
 .tituloSocial {
   margin-bottom: 0.625rem;
@@ -110,10 +110,10 @@
 }
 
 .socialicon {
-  display: flex; /* Coloca os ícones na vertical */
-  flex-direction: row; /* Organiza os ícones em coluna */
-  align-items: center; /* Alinha os ícones ao centro */
-  gap: 15px; /* Espaçamento entre os ícones */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
   margin: 0 0 10em;
 }
 .socialicon a:hover {

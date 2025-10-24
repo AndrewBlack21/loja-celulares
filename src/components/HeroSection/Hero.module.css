@@ -144,7 +144,7 @@
   .hero {
     flex-direction: column-reverse;
     text-align: center;
-    max-height: none; /* libera altura no mobile */
+    max-height: none;
     padding: 2rem 1.2rem;
   }
   .content {
@@ -180,7 +180,7 @@
     margin: 1rem auto;
   }
   .cards {
-    flex-wrap: wrap; /* no mobile, os cards quebram para baixo */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
   }

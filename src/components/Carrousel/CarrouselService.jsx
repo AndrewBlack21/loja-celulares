@@ -1,6 +1,6 @@
 import React from "react";
-// import styles from "./CarrouselService.module.css";
 
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

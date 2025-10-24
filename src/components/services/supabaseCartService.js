@@ -1,5 +1,4 @@
 import { supabase } from "../../supabaseCliente";
-// Exemplo de inicialização: createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY)
 
 const TABLE = "carrinho";
 

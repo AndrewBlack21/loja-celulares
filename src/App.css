@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 :root {
   --bg-dark: #fff;
   --bg-green: #0e3b2d;
@@ -54,10 +47,10 @@ button:hover {
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0.5rem 1rem;
-  border-left: 4px solid #00ff88; /* linha esquerda */
-  border-right: 4px solid #00ff88; /* linha direita */
-  border-radius: 4px; /* opcional */
-  background: var(--text-ligth); /* remove o fundo */
+  border-left: 4px solid #00ff88;
+  border-right: 4px solid #00ff88;
+  border-radius: 4px;
+  background: var(--text-ligth);
 }
 
 .cardpromo {
@@ -74,9 +67,9 @@ button:hover {
 
 .acessorios-section {
   max-width: 1200px;
-  margin: 0 auto; /* Centraliza o contêiner na página */
+  margin: 0 auto;
   padding: 20px;
-  text-align: center; /* Centraliza o título */
+  text-align: center;
 }
 @media (max-width: 768px) {
 }

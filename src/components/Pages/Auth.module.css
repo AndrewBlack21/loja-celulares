@@ -29,10 +29,10 @@
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0.5rem 1rem;
-  border-left: 4px solid #00ff88; /* linha esquerda */
-  border-right: 4px solid #00ff88; /* linha direita */
-  border-radius: 4px; /* opcional */
-  background: var(--text-ligth); /* remove o fundo */
+  border-left: 4px solid #00ff88;
+  border-right: 4px solid #00ff88;
+  border-radius: 4px;
+  background: var(--text-ligth);
 }
 
 .logo {
