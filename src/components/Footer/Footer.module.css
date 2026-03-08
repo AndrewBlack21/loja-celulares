@@ -1,191 +1,235 @@
 .footer {
-  background: var(--bg-green);
-  padding: 40px 20px;
-  border-top: 2px solid #eee;
-  font-family: Arial, sans-serif;
-  color: #fff;
+  background: linear-gradient(180deg, #091a10 0%, #060e09 100%);
+  padding: 56px 24px 28px;
+  border-top: 1px solid rgba(0, 255, 136, 0.12);
+  font-family: "DM Sans", sans-serif;
+  color: #c8e6cb;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Linha de luz decorativa no topo */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.4),
+    transparent
+  );
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 36px;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto 40px;
 }
+
 .container > div {
-  flex: 1;
-  min-width: 200px;
-}
-.contact {
-  font-size: 18px;
-  line-height: 1.8;
-  display: flex;
-  flex-direction: column;
-
-  color: #fff;
+  min-width: 180px;
 }
 
-.contact p {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
-}
-.contact i {
-  font-size: 30px;
-  color: #fff;
-}
-.contact h3 {
-  margin-bottom: 15px;
-  margin-top: 8px;
-}
-
-.contact ul {
-  list-style: none;
-  padding: 0;
-}
-
-.tituloInstituto,
-.tituloContato,
-.tituloLocalizacao,
-.tituloCompromisso {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-family: "Roboto", sans-serif;
-}
-.tituloSocial {
-  margin-bottom: 0.625rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #00ff88;
-  text-transform: uppercase;
-}
-
+/* Bloco Logo */
 .logo {
-  flex: 1 1 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0;
+}
+
+.containerlogo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .img {
-  max-width: 10rem;
+  max-width: 80px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 255, 136, 0.2);
+  filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.15));
+}
 
-  border-radius: 5em;
+.tituloInstituto {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f0f7f2;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .slogan {
   font-style: italic;
-  line-height: 1;
-  width: 17rem;
-  margin-bottom: 2rem;
-  font-size: 0.875rem;
-}
-
-.location,
-.legal,
-.social {
-  flex: 1 1 50px;
-  text-decoration: none;
+  line-height: 1.55;
+  color: #7aad8e;
+  font-size: 0.82rem;
+  max-width: 240px;
+  margin: 0;
 }
 
 .social {
   display: flex;
   flex-direction: column;
-  text-decoration: none;
-  color: #fff;
+  gap: 8px;
 }
 
-.socialIcons {
-  display: flex;
-  gap: 20px;
+.tituloSocial {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 6px;
 }
 
 .socialicon {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 15px;
-  margin: 0 0 10em;
-}
-.socialicon a:hover {
-  color: #00ff88;
-  transform: scale(1.2);
+  gap: 14px;
 }
 
 .link {
-  color: #fff;
+  color: #7aad8e;
   text-decoration: none;
-  margin-bottom: 1px;
+  transition:
+    color 0.2s,
+    transform 0.2s,
+    filter 0.2s;
+  display: flex;
 }
 
 .link:hover {
-  text-decoration: underline;
+  color: #00ff88;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.5));
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: initial;
-    align-items: center;
-  }
-}
-
+/* Bloco Institucional */
 .instituional {
-  color: #fff;
-  margin-bottom: 15px;
+  color: #c8e6cb;
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
-.instituional a {
-  text-decoration: none;
-  color: #fff;
-  &:hover {
-    color: #00ff88;
-  }
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f0f7f2;
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
 }
 
 .instituional ul {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 7px;
 }
 
-.instituional ul li {
-  margin-bottom: 8px;
-  cursor: pointer;
+.instituional a {
+  text-decoration: none;
+  color: #7aad8e;
+  font-size: 0.875rem;
+  transition:
+    color 0.2s,
+    padding-left 0.2s;
 }
 
-.instituional ul li:hover {
-  text-decoration: underline;
+.instituional a:hover {
+  color: #00ff88;
+  padding-left: 4px;
 }
+
+/* Bloco Contato */
+.contact {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #c8e6cb;
+}
+
+.contact h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  color: #f0f7f2;
+  margin: 0 0 12px;
+}
+
+.contact p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 6px;
+  color: #7aad8e;
+  font-size: 0.875rem;
+}
+
+/* Bloco Pagamentos */
+.payments h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  color: #f0f7f2;
+  margin: 0 0 14px;
+}
+
 .payments img {
-  width: 50px;
-  margin: 5px;
-}
-.payments img .badges img {
-  width: 50px;
-  margin: 5px;
-}
-
-.copy {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #fff;
+  width: 44px;
+  margin: 4px;
+  opacity: 0.75;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  filter: brightness(1.1);
 }
 
+.payments img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Linha inferior */
 .bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 255, 136, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.bottom p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #3d6b4f;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 16px 24px;
+  }
+  .container {
+    gap: 28px;
+  }
+  .slogan {
+    max-width: 100%;
+  }
 }

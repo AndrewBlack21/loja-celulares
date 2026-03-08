@@ -1,87 +1,199 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
   justify-content: center;
+  padding: 8px 4px;
 }
+
 .cardproduto {
-  background-color: #0e3b2d;
-  border-radius: 12px;
-  padding: 16px;
+  background: linear-gradient(145deg, #0f4228 0%, #0a2a18 100%);
+  border: 1px solid rgba(0, 255, 136, 0.1);
+  border-radius: 16px;
+  padding: 20px 16px 18px;
   text-align: center;
-  width: 250px;
+  width: 240px;
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 200, 83, 0.06);
 }
+
+.cardproduto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.45),
+    transparent
+  );
+}
+
+.cardproduto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 0%,
+    rgba(0, 255, 136, 0.07) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
 .cardproduto:hover {
-  transform: translateY(-8px) scale(1);
-  box-shadow: 0 14px 30px rgba(0, 255, 0, 0.4);
+  transform: translateY(-8px);
+  border-color: rgba(0, 255, 136, 0.28);
+  box-shadow:
+    0 24px 52px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(0, 255, 136, 0.13);
   cursor: pointer;
-  box-shadow: 0 0 10px var(--btn-green);
 }
+
+.cardproduto:hover::after {
+  opacity: 1;
+}
+
 .cardproduto img {
   max-width: 100%;
   height: 180px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+  transition: transform 0.35s ease;
+}
+
+.cardproduto:hover img {
+  transform: scale(1.06) translateY(-3px);
 }
 
 .info {
   flex: 1;
+  display: flex;
   flex-direction: column;
-
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  width: 100%;
+}
+
+.info h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d4edd9;
+  margin: 0;
 }
 
 .description {
-  color: #ddd;
-  font-size: 0.9rem;
-  line-height: 1.3;
+  color: #7aad8e;
+  font-size: 0.82rem;
+  line-height: 1.45;
   text-align: center;
-  margin: 8px 0;
-  min-height: 60px;
-}
-.price {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #00ff88;
-  margin: 10px 0;
-}
-.title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  margin: 8px 0;
-  min-height: 40px;
-}
-button {
-  margin-top: auto;
+  margin: 2px 0;
+  min-height: 56px;
 }
 
+.price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #00e676;
+  margin: 4px 0;
+  text-shadow: 0 0 12px rgba(0, 230, 118, 0.3);
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0f7f2;
+  text-align: center;
+  margin: 4px 0;
+  min-height: 40px;
+}
+
+/* Seletor de cores */
 .colorOptions {
   display: flex;
   gap: 8px;
-  margin: 10px 0;
+  margin: 6px 0;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .colorButton {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
   border-radius: 50%;
   padding: 0;
   box-sizing: border-box;
-  border: 2px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .colorButton:hover {
-  transform: scale(1.2);
-  border-color: #000;
+  transform: scale(1.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+}
+
+.colorButton.active {
+  border-color: #00ff88;
+  box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.4);
+  transform: scale(1.15);
+}
+
+.buyButton {
+  width: 100%;
+  margin-top: 6px;
+  background: linear-gradient(135deg, #00c853 0%, #00ff88 100%);
+  color: #03200e;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    filter 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 200, 83, 0.25);
+}
+
+.buyButton:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
+}
+
+button {
+  margin-top: auto;
+}
+
+@media (max-width: 640px) {
+  .cardproduto {
+    width: 160px;
+  }
+  .cardproduto img {
+    height: 140px;
+  }
 }

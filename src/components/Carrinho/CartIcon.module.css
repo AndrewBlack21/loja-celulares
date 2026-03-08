@@ -5,13 +5,19 @@
 }
 
 .cartIcon {
-  font-size: 1.5rem;
-  color: white;
-  transition: transform 0.3s ease;
+  font-size: 1.4rem;
+  color: #c8e6cb;
+  transition:
+    color 0.2s,
+    transform 0.3s ease;
+}
+
+.cartContainer:hover .cartIcon {
+  color: #00ff88;
 }
 
 .bump {
-  animation: bump 0.5s ease;
+  animation: bump 0.45s ease;
 }
 
 @keyframes bump {
@@ -19,34 +25,39 @@
     transform: scale(1);
   }
   30% {
-    transform: scale(1.2);
+    transform: scale(1.25) rotate(-8deg);
   }
-  50% {
-    transform: scale(0.9);
+  60% {
+    transform: scale(0.92) rotate(4deg);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
 }
 
 .count {
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  transition: transform 0.3s ease;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #c8e6cb;
+  transition: color 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.cartContainer:hover .count {
+  color: #00ff88;
 }
 
 .pop {
-  animation: pop 0.5s ease;
+  animation: pop 0.45s ease;
 }
 
 @keyframes pop {
   0% {
     transform: scale(0.5);
-    opacity: 0.5;
+    opacity: 0.4;
   }
-  50% {
-    transform: scale(1.3);
+  55% {
+    transform: scale(1.35);
     opacity: 1;
   }
   100% {

@@ -1,37 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap");
 
-:root{
-  --bg-dark: #0f0f0f
-  --bg-green: #0e3b2d;
-  --btn-greenligth: #00c853;
-  --text-ligth: #f5f5f5;
-  --button-green: #00c850;
+:root {
+  /* Paleta 80% verde / 15% escuro / 5% accent */
+  --bg-dark: #060e09;
+  --bg-dark-2: #0b1a10;
+  --bg-green: #0d3520;
+  --bg-green-mid: #0f4228;
+  --bg-green-card: #0e3b26;
+  --btn-greenlight: #00c853;
+  --accent: #00ff88;
+  --accent-soft: #00e57633;
+  --text-light: #f0f7f2;
+  --text-muted: #7aad8e;
+  --text-dim: #3d6b4f;
+  --gold: #c8a951;
+  --white-5: rgba(255, 255, 255, 0.05);
+  --white-10: rgba(255, 255, 255, 0.1);
+
+  /* Gradientes reutilizáveis */
+  --grad-card: linear-gradient(145deg, #0f4228 0%, #0a2a18 100%);
+  --grad-accent: linear-gradient(135deg, #00c853 0%, #00ff88 100%);
+  --grad-hero: linear-gradient(160deg, #060e09 0%, #0d3520 60%, #0f4228 100%);
+  --grad-glass: linear-gradient(
+    135deg,
+    rgba(15, 66, 40, 0.6) 0%,
+    rgba(10, 42, 24, 0.4) 100%
+  );
+
+  /* Sombras */
+  --shadow-card:
+    0 8px 32px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 200, 83, 0.08);
+  --shadow-hover:
+    0 20px 48px rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 255, 136, 0.15);
+  --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.25);
 }
 
-body{
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   margin: 0;
-  font-family: 'Roboto', Arial, sans-serif;
-  
-  color: var(--text-ligth);
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(
+    ellipse 80% 40% at 50% -10%,
+    rgba(13, 53, 32, 0.7) 0%,
+    transparent 70%
+  );
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
-h2{
-  background: var(--bg-green);
-  padding: .6rem;
-  border-radius: .4rem;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+  line-height: 1.2;
+}
+
+h2 {
+  background: var(--grad-card);
+  border: 1px solid rgba(0, 255, 136, 0.18);
+  padding: 0.55rem 1.4rem;
+  border-radius: 0.5rem;
   display: inline-block;
+  letter-spacing: 0.02em;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-button{
-  background: var(--btn-green);
-  color: var(--text-ligth);
-  padding: .4rem 1rem;
+button {
+  background: var(--grad-accent);
+  color: #03200e;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  padding: 0.55rem 1.2rem;
   border: none;
-  border-radius: .4rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  margin-top: .6rem;
+  margin-top: 0.6rem;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 2px 12px rgba(0, 200, 83, 0.25);
 }
 
-button:hover{
-  opacity: 0.9;
+button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
 }
 
+button:active {
+  transform: translateY(0);
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.8rem;
+  border-left: 3px solid var(--accent);
+  border-right: 3px solid var(--accent);
+  border-radius: 6px;
+  background: var(--grad-card);
+  letter-spacing: 0.01em;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 136, 0.04) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.cardpromo {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.acessorios-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+/* Scrollbar premium */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-green-mid);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

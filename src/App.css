@@ -1,75 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
 :root {
-  --bg-dark: #fff;
-  --bg-green: #0e3b2d;
-  --btn-greenligth: #00c853;
-  --text-ligth: #f5f5f5;
+  --bg-dark: #060e09;
+  --bg-green: #0d3520;
+  --bg-green-card: #0e3b26;
+  --btn-greenlight: #00c853;
+  --accent: #00ff88;
+  --text-light: #f0f7f2;
+  --text-muted: #7aad8e;
+  --grad-card: linear-gradient(145deg, #0f4228 0%, #0a2a18 100%);
+  --grad-accent: linear-gradient(135deg, #00c853 0%, #00ff88 100%);
+  --shadow-card:
+    0 8px 32px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 200, 83, 0.08);
+  --shadow-hover:
+    0 20px 48px rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 255, 136, 0.15);
 }
 
 body {
   margin: 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "DM Sans", sans-serif;
   background-color: var(--bg-dark);
-  color: var(--text-ligth);
+  background-image: radial-gradient(
+    ellipse 80% 40% at 50% -10%,
+    rgba(13, 53, 32, 0.7) 0%,
+    transparent 70%
+  );
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
 }
 
 h2 {
-  background: #000;
-  padding: 0.6rem;
-  border-radius: 0.4rem;
+  font-family: "Playfair Display", serif;
+  background: var(--grad-card);
+  border: 1px solid rgba(0, 255, 136, 0.18);
+  padding: 0.55rem 1.4rem;
+  border-radius: 0.5rem;
   display: inline-block;
+  box-shadow: var(--shadow-card);
 }
 
 button {
-  background: var(--btn-greenligth);
-  color: var(--text-ligth);
-  padding: 0.4rem 1rem;
+  background: var(--grad-accent);
+  color: #03200e;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  padding: 0.55rem 1.2rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   margin-top: 0.6rem;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 2px 12px rgba(0, 200, 83, 0.25);
 }
 
 button:hover {
-  opacity: 0.9;
-  background-color: #00ff88;
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
 }
 
 .title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #000;
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-light);
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0.5rem 1rem;
-  border-left: 4px solid #00ff88;
-  border-right: 4px solid #00ff88;
-  border-radius: 4px;
-  background: var(--text-ligth);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.8rem;
+  border-left: 3px solid var(--accent);
+  border-right: 3px solid var(--accent);
+  border-radius: 6px;
+  background: var(--grad-card);
+  box-shadow: var(--shadow-card);
+  letter-spacing: 0.01em;
 }
 
 .cardpromo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  gap: 20px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
+  gap: 24px;
   justify-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
 .acessorios-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 28px 24px;
   text-align: center;
 }
+
 @media (max-width: 768px) {
+  .acessorios-section {
+    padding: 20px 16px;
+  }
+  .title {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.2rem;
+  }
 }

@@ -2,107 +2,154 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
-  min-height: 60vh;
+  padding: 60px 20px;
+  min-height: 70vh;
 }
 
 .formWrapper {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #0f4228 0%, #0a2a18 100%);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  padding: 44px 40px;
+  border-radius: 16px;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.5),
+    0 0 32px rgba(0, 255, 136, 0.05);
   width: 100%;
-  max-width: 450px;
+  max-width: 440px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.formWrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.5),
+    transparent
+  );
 }
 
 .title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #000;
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f0f7f2;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0.5rem 1rem;
-  border-left: 4px solid #00ff88;
-  border-right: 4px solid #00ff88;
-  border-radius: 4px;
-  background: var(--text-ligth);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.4rem;
+  border-left: 3px solid #00ff88;
+  border-right: 3px solid #00ff88;
+  border-radius: 6px;
+  background: rgba(0, 255, 136, 0.05);
+  margin-bottom: 28px;
 }
 
 .logo {
-  max-width: 100%;
+  max-width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto 20px;
+  filter: invert(1) drop-shadow(0 0 12px rgba(0, 255, 136, 0.3));
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
 .input {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 13px 16px;
+  background: rgba(6, 14, 9, 0.6);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #f0f7f2;
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+
+.input::placeholder {
+  color: #3d6b4f;
 }
 
 .input:focus {
   outline: none;
-  border-color: #27ae60;
-  box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+  border-color: rgba(0, 255, 136, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.08);
+  background: rgba(6, 14, 9, 0.8);
 }
 
 .button {
-  padding: 15px;
+  padding: 13px;
   border: none;
-  border-radius: 5px;
-  background-color: #27ae60;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: bold;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #00c853 0%, #00ff88 100%);
+  color: #03200e;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 10px;
+  transition:
+    filter 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+  margin-top: 6px;
+  box-shadow: 0 4px 16px rgba(0, 200, 83, 0.3);
+  letter-spacing: 0.02em;
 }
 
 .button:hover {
-  background-color: #229954;
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 200, 83, 0.45);
 }
 
 .button:disabled {
-  background-color: #95a5a6;
+  background: linear-gradient(135deg, #1a4d2e, #1a4d2e);
+  color: #3d6b4f;
   cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  filter: none;
 }
 
 .error {
-  color: #e74c3c;
-  font-size: 0.9rem;
-  margin-top: -5px;
-  margin-bottom: 10px;
+  color: #ff6b6b;
+  font-size: 0.83rem;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-top: -4px;
 }
 
 .switchLink {
-  margin-top: 25px;
-  color: #555;
+  margin-top: 24px;
+  color: #7aad8e;
+  font-size: 0.875rem;
 }
 
 .switchLink a {
-  color: #27ae60;
-  font-weight: bold;
+  color: #00ff88;
+  font-weight: 600;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .switchLink a:hover {
+  color: #69f0ae;
   text-decoration: underline;
 }
 
@@ -110,12 +157,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.83rem;
+  color: #7aad8e;
   text-align: left;
   cursor: pointer;
+  padding: 2px 0;
 }
 
 .checkboxLabel input {
   width: auto;
+  accent-color: #00ff88;
 }

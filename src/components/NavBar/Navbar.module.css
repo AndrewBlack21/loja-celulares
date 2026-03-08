@@ -2,124 +2,188 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #093b2f;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(9, 42, 24, 0.95) 0%,
+    rgba(13, 53, 32, 0.95) 100%
+  );
+  border: 1px solid rgba(0, 255, 136, 0.12);
   color: white;
-  position: relative;
-  margin: 0.5rem;
+  position: fixed;
+  top: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  max-width: 1280px;
+  z-index: 999;
   border-radius: 1rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(0, 255, 136, 0.08) inset;
+  transition: box-shadow 0.3s ease;
 }
 
-.navbar .logo {
+.navbar:hover {
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(0, 255, 136, 0.06),
+    0 1px 0 rgba(0, 255, 136, 0.1) inset;
+}
+
+.logo {
   height: 50px;
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.6));
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 
 .logo img {
-  height: 55px;
-  filter: invert(1);
+  height: 50px;
+  filter: invert(1) drop-shadow(0 0 8px rgba(0, 255, 136, 0.4));
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
+
+.navbar .logo img:hover {
+  transform: scale(1.08);
+  filter: invert(1) drop-shadow(0 0 16px rgba(0, 255, 136, 0.7));
+}
+
 .carrinho {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: white;
+  transition: color 0.2s;
 }
+
 .hamburger {
   display: none;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
+  padding: 0.3rem;
+  margin: 0;
+  transition: color 0.2s;
 }
 
-/* Menu para Desktop */
+.hamburger:hover {
+  color: #00ff88;
+  transform: none;
+  box-shadow: none;
+  filter: none;
+}
+
+/* Menu Desktop */
 .menuDesktop {
   display: flex;
   align-items: center;
   gap: 2rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menuDesktop a {
-  color: white;
+  color: #c8e6cb;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
 
-/* Esconde o menu mobile em telas grandes */
+.menuDesktop a:hover {
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.08);
+}
+
 .menuMobile {
   display: none;
 }
 
-/*.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  align-items: center;
-}*/
-
 .navbar li {
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 500;
 }
+
 .navbar a {
   text-decoration: none;
-  color: var(--text-ligth);
+  color: #c8e6cb;
 }
 
 .navbar a:hover {
   color: #00ff88;
 }
+
 .carrinho:hover {
-  filter: brightness(0) saturate(100%) invert(84%) sepia(20%) saturate(5487%)
-    hue-rotate(91deg) brightness(101%) contrast(103%);
+  color: #00ff88;
+  filter: none;
 }
 
-.navbar .logo img:hover {
-  transform: scale(1.1);
-  filter: brightness(0) saturate(100%) invert(84%) sepia(20%) saturate(5487%)
-    hue-rotate(91deg) brightness(101%) contrast(103%);
-}
-
-/* Media Query */
 @media (max-width: 768px) {
-  /* Esconde o menu de desktop */
+  .navbar {
+    top: 0.4rem;
+    width: calc(100% - 2rem);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+  }
+
   .menuDesktop {
     display: none;
   }
 
-  /* Mostra o botão hambúrguer */
   .hamburger {
     display: block;
   }
 
-  /* Estiliza o menu dropdown que aparece */
   .menuMobile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    background-color: rgba(9, 59, 47, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    gap: 1.25rem;
+    background: linear-gradient(
+      160deg,
+      rgba(9, 42, 24, 0.98) 0%,
+      rgba(13, 53, 32, 0.98) 100%
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 255, 136, 0.12);
+    border-top: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    padding: 2rem 0;
+    padding: 1.75rem 0;
     list-style: none;
     z-index: 1000;
-    border-radius: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    margin: 0;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
   }
 
   .menuMobile a {
-    color: white;
+    color: #c8e6cb;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .menuMobile a:hover {
+    color: #00ff88;
   }
 
   .mobileAuthCart {

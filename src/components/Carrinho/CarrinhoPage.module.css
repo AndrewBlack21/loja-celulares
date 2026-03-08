@@ -1,146 +1,267 @@
+.container {
+  max-width: 1200px;
+  margin: 7rem auto 0;
+  padding: 0 24px 60px;
+  color: #f0f7f2;
+}
+
+.titulo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f0f7f2;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.8rem;
+  border-left: 3px solid #00ff88;
+  border-right: 3px solid #00ff88;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #0f4228, #0a2a18);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+}
+
 .carrinhoContainer {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 20px 0;
+  gap: 32px;
+  padding: 8px 0;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 6rem auto 0 auto;
-  padding: 0 20px;
-  color: #000;
-}
-.titulo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #000;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0.5rem 1rem;
-  border-left: 4px solid #00ff88;
-  border-right: 4px solid #00ff88;
-  border-radius: 4px;
-  background: var(--text-ligth);
-}
-/* Coluna de produtos */
+/* Grade de produtos */
 .produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 20px;
-  width: 100%;
-  padding-bottom: 1rem;
+  flex: 1;
+  min-width: 280px;
+  max-width: 780px;
 }
 
-/* Card de cada produto */
+/* Card produto no carrinho */
 .cardProduto {
-  background: #093b2f;
-  color: white;
-  border-radius: 10px;
-  padding: 15px;
+  background: linear-gradient(145deg, #0f4228 0%, #0a2a18 100%);
+  border: 1px solid rgba(0, 255, 136, 0.12);
+  color: #f0f7f2;
+  border-radius: 14px;
+  padding: 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  width: 220px;
-  height: 320px;
+  gap: 8px;
+  width: 100%;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
 }
 
-.info {
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 3px 6px;
-  border-radius: 5px;
-  margin-bottom: 8px;
+.cardProduto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.3),
+    transparent
+  );
+}
+
+.cardProduto:hover {
+  border-color: rgba(0, 255, 136, 0.22);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.5),
+    0 0 16px rgba(0, 255, 136, 0.08);
 }
 
 .cardProduto img {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
-  margin-bottom: 10px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 .cardProdutoInfo {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 3px;
+  width: 100%;
 }
 
 .cardProdutoInfo h4 {
-  font-size: 16px;
+  font-size: 0.88rem;
   margin: 0;
-}
-.nome {
-  font-size: 14px;
-  font-weight: 500;
-  margin: 5px 0;
-  flex-grow: 1;
-}
-.cardProdutoInfo p {
-  margin: 5px 0;
-  font-weight: bold;
+  font-weight: 600;
+  color: #d4edd9;
 }
 
-/* Coluna de pagamento */
-.pagamento {
-  flex: 1;
-  background: #e6f4f1;
-  border-radius: 10px;
-  padding: 20px;
+.cardProdutoInfo p {
+  margin: 2px 0;
+  font-size: 0.8rem;
+  color: #7aad8e;
 }
+
+.nome {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #d4edd9;
+  margin: 4px 0;
+}
+
+.preco {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00e676;
+  margin: 4px 0;
+  text-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+}
+
+.info {
+  color: #7aad8e;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+
+/* Botão remover */
+.remover {
+  background: linear-gradient(135deg, #00c853 0%, #00ff88 100%);
+  border: none;
+  color: #03200e;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 7px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition:
+    filter 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 2px 10px rgba(0, 200, 83, 0.25);
+  margin: 0;
+}
+
+.remover:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(0, 200, 83, 0.4);
+}
+
+/* Painel de pagamento */
+.pagamento {
+  flex: 0 0 300px;
+  background: linear-gradient(145deg, #0f4228 0%, #0a2a18 100%);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: 16px;
+  padding: 24px 20px;
+  position: sticky;
+  top: 7rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.pagamento::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.4),
+    transparent
+  );
+  border-radius: 16px 16px 0 0;
+}
+
 .pagamento h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  color: #f0f7f2;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.pagamento p {
+  font-size: 0.9rem;
+  color: #7aad8e;
+  margin: 6px 0;
+}
+
+.pagamento p strong {
+  color: #f0f7f2;
+}
+
+.pagamento hr {
+  border: none;
+  border-top: 1px solid rgba(0, 255, 136, 0.12);
+  margin: 12px 0;
 }
 
 .formaEscolhida {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.formaEscolhida h4 {
+  font-size: 0.85rem;
+  color: #7aad8e;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 10px;
+}
+
+.botoesPagamento {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 16px;
+}
+
+.botoesPagamento span {
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+  border-radius: 7px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .finalizar {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-.preco {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 5px 0;
 }
 
-.remover {
-  background: #00ff44;
-  border: none;
-  color: white;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.remover:hover {
-  background: #00cc36;
-}
-
-.botoesPagamento {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  margin: 1rem;
+@media (max-width: 768px) {
+  .container {
+    margin-top: 5.5rem;
+    padding: 0 16px 40px;
+  }
+  .pagamento {
+    flex: 1 1 100%;
+    position: static;
+  }
+  .produtos {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
 }
