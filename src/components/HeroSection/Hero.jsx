@@ -1,20 +1,14 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import logo from "/src/assets/Logo.png";
+import phoneVideo from "/src/assets/imagens/phone_screen.mp4";
 
-// Swiper import
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// Aparelhos quebrados
-import TelaQuebrada from "/src/assets/imagens/Tela quebrada.png";
-import Oxidacao from "/src/assets/imagens/Oxidcao.png";
-import Memoria from "/src/assets/imagens/Memoria.png";
-
-// Import typewriter
 import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
@@ -29,11 +23,11 @@ export default function Hero() {
         loop={true}
         className={styles.swiper}
       >
+        {/* Slide 1 — Boas-vindas */}
         <SwiperSlide className={styles.slide}>
           <div className={styles.content}>
             <div className={styles.textContent}>
               <h1 className={styles.title}>
-                {/* Bem-vindo á <span>Iphocell</span> */}
                 <Typewriter
                   words={[
                     "Bem-vindo a Iphocell",
@@ -53,37 +47,17 @@ export default function Hero() {
                 melhores preços do mercado.
               </p>
               <div className={styles.button}>
-                <button className={styles.btnPrimary}> Ver Produtos</button>
-                <button className={styles.btnSecondary}> Saiba Mais</button>
+                <button className={styles.btnPrimary}>Ver Produtos</button>
+                <button className={styles.btnSecondary}>Saiba Mais</button>
               </div>
             </div>
-
             <div className={styles.imageContent}>
               <img src={logo} alt="Iphocell Logo" className={styles.logo} />
             </div>
           </div>
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <div className={styles.content}>
-            <div className={styles.textContent}>
-              <h1 className={styles.title}>
-                Promoções <span>Imperdíveis</span>
-              </h1>
-              <p className={styles.subtitle}>
-                Smartphones, capas e acessórios com descontos exclusivos.
-              </p>
-              <div className={styles.button}>
-                <button className={styles.btnPrimary}>Ver Ofertas</button>
-                <button className={styles.btnSecondary}>Saiba Mais</button>
-              </div>
-            </div>
-            <div className={styles.imageContent}>
-              <img src={logo} alt="Promoções" className={styles.logo} />
-            </div>
-          </div>
-        </SwiperSlide> */}
 
-        {/* Slide 3 */}
+        {/* Slide 2 — Assistência Técnica */}
         <SwiperSlide>
           <div className={styles.content}>
             <div className={styles.textContent}>
@@ -99,17 +73,23 @@ export default function Hero() {
                   Falar com a Gente
                 </button>
               </div>
+              <div className={styles.serviceChips}>
+                <span className={styles.chip}>📱 Tela quebrada</span>
+                <span className={styles.chip}>💧 Oxidação</span>
+                <span className={styles.chip}>💾 Memória</span>
+                <span className={styles.chip}>🔋 Bateria</span>
+              </div>
             </div>
-            <div className={styles.cards}>
-              <div className={styles.card}>
-                <img src={TelaQuebrada} alt="Tela Quebrada" />
-              </div>
-              <div className={styles.card}>
-                <img src={Oxidacao} alt="Tela" className="card-destaque" />
-              </div>
-              <div className={styles.card}>
-                <img src={Memoria} alt="Memoria" />
-              </div>
+
+            <div className={styles.videoWrapper}>
+              <video
+                className={styles.heroVideo}
+                src={phoneVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
             </div>
           </div>
         </SwiperSlide>
